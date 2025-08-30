@@ -1,57 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img alt="ini logo">
+    <header role="banner">
+        <div class="logo" aria-label="Logo with letters Y and K arranged vertically">
+            <span style="line-height: 1; user-select:none;">G<br />C</span>
         </div>
-
-        <nav aria-label="Navigasi utama web">
-            <a href="">HOME</a>
-            <a href="">OUR PROFLE</a>
-            <a href="">MASSAGE US</a>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="#welcome" tabindex="0">Home</a></li>
+                <li><a href="#headquarter" tabindex="0">Our Profile</a></li>
+                <li><a href="#message-us" tabindex="0">Message Us</a></li>
+            </ul>
         </nav>
     </header>
-    <hr>
 
     <main>
-        <section id="gretting">
-            <h1>SELAMAT DATANG DALAM WEB KAMI</h1>
+        <section id="welcome" tabindex="-1" aria-labelledby="welcome-title">
+            <h1 id="welcome-title">Hi <span id="username">Guest</span>, Welcome To Website</h1>
+            <p>Ini adalah website buatan pertama</p>
         </section>
-        <hr>
-        <section id="profile">
-            <h2>berikut adalah profile dari perusahaan kami</h2>
+
+        <section id="headquarter" aria-labelledby="hq-title">
+            <h2 id="hq-title">Our Headquarter</h2>
+            <div class="hq-list" role="list">
+                <div class="hq-item" role="listitem">
+                    <div class="hq-circle" aria-label="Headquarter Jakarta">JKT</div>
+                    <div class="hq-label">Jakarta</div>
+                </div>
+                <div class="hq-item" role="listitem">
+                    <div class="hq-circle" aria-label="Headquarter Bandung">BDG</div>
+                    <div class="hq-label">Bandung</div>
+                </div>
+                <div class="hq-item" role="listitem">
+                    <div class="hq-circle" aria-label="Headquarter Surabaya">SBY</div>
+                    <div class="hq-label">Surabaya</div>
+                </div>
+            </div>
         </section>
-        <hr>
-        <section id="kotak-input">
-            <p>isi data diri dan saran berikut</p>
-            <form id="formulir">
-                <label id="name">nama</label>
-                <input type="text" placeholder="Isi dengan nama">
-                <br>
-                <label id="date">tanggal lahir</label>
-                <input type="date">
-                <br>
-                <label for="">comment</label>
-                <textarea id="kotak-tulisa" rows="5" cols="25" placeholder="silahkan tuisakan saran anda"></textarea>
-                <br>
-                <button >kirim</button>
+
+        <section id="message-us" aria-labelledby="message-title">
+            <h2 id="message-title">Message Us</h2>
+            <form id="contact-form" aria-describedby="form-instructions">
+                <div id="form-instructions" class="sr-only">Form untuk mengirim pesan dengan mengisi Nama, Tanggal Lahir, Jenis Kelamin dan Pesan Anda</div>
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Nama" required aria-required="true" autocomplete="name" />
+
+                <label for="dob">Tanggal Lahir</label>
+                <input type="date" id="dob" name="dob" required aria-required="true" max="9999-12-31" />
+
+                <fieldset>
+                    <legend>Jenis Kelamin</legend>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="Laki-Laki" required aria-required="true" />
+                        <label class="radio-label" for="male">Laki-Laki</label>
+                        <input type="radio" id="female" name="gender" value="Perempuan" />
+                        <label class="radio-label" for="female">Perempuan</label>
+                    </div>
+                </fieldset>
+
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" placeholder="Pesan" required aria-required="true"></textarea>
+
+                <button type="submit">Submit</button>
             </form>
+
+            <div id="message-display" aria-live="polite" aria-atomic="true" tabindex="0" aria-label="Informasi pesan yang dikirim">
+                <!-- Fill dynamically with submitted message -->
+            </div>
         </section>
     </main>
 
-
-    <hr>
     <footer>
-        irsan ali wardana. 29 august 2025
+        Create by irsan. 30 august 2025
     </footer>
-    
+
     <script src="js/script.js"></script>
 </body>
 </html>

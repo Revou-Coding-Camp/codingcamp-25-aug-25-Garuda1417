@@ -1,0 +1,277 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+body {
+    background: #fff;
+    color: #222;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Container for main content */
+main {
+    flex-grow: 1;
+}
+
+/* Header bar */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffdd00;
+    color: #444;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #444;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+/* Nav links */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+nav ul li {
+    /* Space handled by gap */
+}
+nav ul li a {
+    text-decoration: none;
+    color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: #ffdd00;
+    color: #222;
+    outline: none;
+}
+
+/* Section styling */
+section {
+    padding: 2rem 1rem;
+    border-bottom: 1px solid #ddd;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 95%;
+    scroll-margin-top: 70px; /* Untuk offset header yang sticky */
+}
+
+/* Welcome section */
+#welcome h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+}
+#welcome p {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Headquarter circles container */
+#headquarter .hq-list {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    gap: 2.5rem;
+}
+
+/* Each hq circle */
+.hq-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hq-circle {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #444;
+    border-radius: 50%;
+    background-color: #f8f8f8;
+    box-shadow: inset 0 0 6px #ddd;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #666;
+    user-select: none;
+}
+.hq-label {
+    font-size: 0.9rem;
+    color: #444;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* Message Us Form Section */
+#message-us {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+/* Form container */
+form {
+    flex: 1 1 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    resize: vertical;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
+    border-color: #ffdd00;
+    box-shadow: 0 0 5px #ffdd00aa;
+    outline: none;
+}
+form textarea {
+    height: 100px;
+    min-height: 80px;
+    max-height: 200px;
+}
+
+/* Radio buttons container */
+.radio-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 500;
+}
+.radio-group input[type="radio"] {
+    accent-color: #ffdd00;
+    cursor: pointer;
+}
+.radio-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Submit button */
+form button[type="submit"] {
+    background-color: #ffdd00;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: #222;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+}
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+    background-color: #e6c700;
+    outline: none;
+}
+
+/* Message display area */
+#message-display {
+    flex: 1 1 320px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    white-space: pre-line;
+    color: #333;
+    overflow-y: auto;
+    box-shadow: inset 0 0 5px #ddd;
+    min-height: 230px;
+    max-height: 400px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    color: #777;
+    user-select: none;
+    background-color: #fafafa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    nav ul {
+        gap: 0.6rem;
+        font-size: 0.9rem;
+    }
+    #headquarter .hq-list {
+        flex-direction: column;
+        max-width: 200px;
+        margin: 0 auto;
+        gap: 1.5rem;
+    }
+    #message-us {
+        flex-direction: column;
+    }
+}
+
+/* Accessibility helper class for screen-reader only text */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
